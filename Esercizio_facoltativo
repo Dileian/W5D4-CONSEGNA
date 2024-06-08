@@ -1,0 +1,60 @@
+/*File: Esercizio_facolatativo.c*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+
+int main() {
+    int i;
+    int n = 3; // Numero di valori da inserire
+    double somma = 0.0, numero, media;
+    
+    // Inserimento numeri da parte dell'utente
+    printf("Inserisci tre numeri:\n");
+    for (i = 0; i < n; i++) {
+        printf("Inserisci il numero %d: ", i + 1);
+        scanf("%lf", &numero);  // Legge un numero in virgola mobile dallo standard input
+        somma += numero;  // Aggiunge il numero inserito alla somma totale
+    }
+
+    //Formula per il calcolo della media 
+    media= somma / n;
+
+    //Visualizzazione della media con due cifre decimali e arrotondata
+    printf("Media con due cifre decimali: %.2f\n", media);
+    printf("Media arrotondata: %.0f\n", media);
+
+    //Aree calcolate usando la media esatta
+    double LatoQuadrato= media;
+    double AreaQuadrato = LatoQuadrato * LatoQuadrato;
+    printf ("Area del quadrato con media esatta: %.2f\n", AreaQuadrato);
+    double RaggioCerchio = media;
+    double AreaCerchio = M_PI * pow(RaggioCerchio,2);
+    printf ("Area del cerchio con media esatta: %.2f\n", AreaCerchio);
+    double LatoTriangolo = media;
+    double AltezzaTriangolo = (sqrt(3) / 2) * LatoTriangolo;
+    double AreaTriangolo = (LatoTriangolo * AltezzaTriangolo) / 2;
+    printf ("Area del triangolo equilatero con media esatta: %.2f\n", AreaTriangolo);
+
+    //Aree calcolate usanto la media arrotondata
+    LatoQuadrato = round(media);
+    AreaQuadrato = LatoQuadrato * LatoQuadrato;
+    printf ("Area del quadrato con media arrotondata: %.0f\n", AreaQuadrato);
+    RaggioCerchio = round(media);
+    AreaCerchio = M_PI * pow(RaggioCerchio,2);
+    printf ("Area del cerchio con media arrotondata: %.0f\n", AreaCerchio);
+    LatoTriangolo = round(media);
+    AltezzaTriangolo = (sqrt(3) / 2) * LatoTriangolo;
+    AreaTriangolo = (LatoTriangolo * AltezzaTriangolo) / 2;
+    printf ("Area del triangolo equilatero con media arrotondata: %.0f\n", AreaTriangolo);
+
+    //Fine del programma                                                                                                                                                                                                                    
+    printf("CIAO! Grazie per aver scelto questo programma! \n");
+
+    return 0;
+
+}
