@@ -37,7 +37,7 @@ int main() {
     printf("L'area del triangolo equilatero di lato %.2f è: %.2f\n", d, At);
 
     //Fine del programma                                                                                                                                                                                                                    
-    printf("CIAO! Grazie per aver scelto questo programma! \n");
+    printf("Arrivederci, grazie per aver scelto questo programma! \n");
     return 0;
 
     }
